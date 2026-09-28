@@ -1,4 +1,4 @@
-/* ====== HIER PFLEGST DU DEINE SEITE ======
+1/* ====== HIER PFLEGST DU DEINE SEITE ======
    Bilder: Foto einfach zu den anderen Dateien hochladen und unten den Dateinamen eintragen (z. B. herz1.jpg).
    Produkt hinzufügen: eine Zeile kopieren. Entfernen: Zeile löschen.
    Link leer lassen ("") = Button wird automatisch ausgeblendet. */
@@ -11,7 +11,7 @@ window.NC = {
     { name: "Etsy",         url: "", text: "Handgemachtes bei Etsy" }
   ],
   produkte: [
-    { titel: "Herz-Girlande",       kategorie: "Herzen",         bild: "", text: "Gedruckte Herzen, Schicht für Schicht aufgereiht.", link: "" },
+    { titel: "Herz-Girlande",       kategorie: "Herzen",         bild: "Herz1", text: "Gedruckte Herzen, Schicht für Schicht aufgereiht.", link: "" },
     { titel: "Blumen-Girlande",     kategorie: "Blumen",         bild: "", text: "Filigrane Blüten für Fenster und Wand.", link: "" },
     { titel: "Schmetterlinge",      kategorie: "Schmetterlinge", bild: "", text: "Leichte Falter, die im Luftzug schweben.", link: "" },
     { titel: "Hohler Tannenbaum",   kategorie: "Weihnachten",    bild: "", text: "Aus Kugeln gestapelt, innen Platz für eine LED-Kerze.", link: "" },
