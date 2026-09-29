@@ -1,6 +1,10 @@
-1/* ====== HIER PFLEGST DU DEINE SEITE ======
-   Bilder: Foto einfach zu den anderen Dateien hochladen und unten den Dateinamen eintragen (z. B. herz1.jpg).
-   Produkt hinzufügen: eine Zeile kopieren. Entfernen: Zeile löschen.
+/* ====== HIER PFLEGST DU DEINE SEITE ======
+   Bilder: Datei einfach zu den anderen Dateien hochladen (kurzer Name ohne
+   Leerzeichen/Umlaute, z. B. herzkette-1.jpg) und unten den Dateinamen eintragen.
+   Ein Produkt kann mehrere Bilder haben - dann erscheinen im Shop Pfeile zum Durchklicken.
+
+   Neues Produkt hinzufügen: einen kompletten Block { ... } kopieren, ein Komma
+   dahinter setzen und die Werte anpassen. Produkt entfernen: den Block löschen.
    Link leer lassen ("") = Button wird automatisch ausgeblendet. */
 window.NC = {
   whatsapp: "4915679824183",           // Nummer ohne + und ohne Nullen am Anfang
@@ -11,10 +15,13 @@ window.NC = {
     { name: "Etsy",         url: "", text: "Handgemachtes bei Etsy" }
   ],
   produkte: [
-    { titel: "Herz-Girlande",       kategorie: "Herzen",         bild: "Herz1", text: "Gedruckte Herzen, Schicht für Schicht aufgereiht.", link: "" },
-    { titel: "Blumen-Girlande",     kategorie: "Blumen",         bild: "", text: "Filigrane Blüten für Fenster und Wand.", link: "" },
-    { titel: "Schmetterlinge",      kategorie: "Schmetterlinge", bild: "", text: "Leichte Falter, die im Luftzug schweben.", link: "" },
-    { titel: "Hohler Tannenbaum",   kategorie: "Weihnachten",    bild: "", text: "Aus Kugeln gestapelt, innen Platz für eine LED-Kerze.", link: "" },
-    { titel: "Werbebild-Beispiel",  kategorie: "Wohnen",         bild: "werbebild.jpg", text: "So wohnt es sich mit Fell und Pfote.", link: "" }
+    {
+      titel: "Herzkette",
+      kategorie: "Herzen",
+      // Beispiel mit mehreren Fotos: bilder: ["herzkette-1.jpg","herzkette-2.jpg","herzkette-3.jpg"]
+      bilder: [],
+      text: "Gedruckte Herzen, Schicht für Schicht aufgereiht.",
+      link: ""
+    }
   ]
 };
