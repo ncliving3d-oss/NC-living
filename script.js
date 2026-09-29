@@ -11,7 +11,7 @@ $("#filter").onclick=e=>{if(e.target.tagName!="BUTTON")return;document.querySele
 const lb=$("#lb");$("#grid").onclick=e=>{const c=e.target.closest(".card");if(!c||e.target.tagName=="A"||!c.dataset.src)return;$("img",lb).src=c.dataset.src;lb.classList.add("open")};
 lb.onclick=()=>lb.classList.remove("open");addEventListener("keydown",e=>e.key=="Escape"&&lb.classList.remove("open"));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
-const watch=()=>document.querySelectorAll(".rv:not(.in)").forEach(el=>io.observe(el));watch();
+const watch=()=>document.querySelectorAll(".rv:not(.in),.step:not(.in)").forEach(el=>io.observe(el));watch();
 const bar=$(".bar"),pr=$(".progress"),ph=$(".photo img");
 addEventListener("scroll",()=>{const y=scrollY,h=document.body.scrollHeight-innerHeight;pr.style.transform=`scaleX(${y/h})`;bar.classList.toggle("on",y>60);
 },{passive:true});
