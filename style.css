@@ -69,14 +69,13 @@ section{padding:clamp(4.5rem,10vw,9rem) 0}
 .printer-anim .head{fill:var(--gold);animation:head-move 3.6s cubic-bezier(.45,0,.55,1) infinite}
 .printer-anim .head rect:last-child{fill:rgba(210,174,114,.5)}
 @keyframes head-move{0%,100%{transform:translateX(30px)}50%{transform:translateX(570px)}}
-.printer-anim .lb{fill:rgba(210,174,114,.55);transform-origin:300px 121px;animation:lb-grow 3.6s ease-in-out infinite}
-.printer-anim .lb{x:calc(50% - 130px);width:260px}
-.printer-anim .lb:nth-child(1){animation-delay:0s}
-.printer-anim .lb:nth-child(2){animation-delay:.15s}
-.printer-anim .lb:nth-child(3){animation-delay:.3s}
-.printer-anim .lb:nth-child(4){animation-delay:.45s}
-.printer-anim .lb:nth-child(5){animation-delay:.6s}
-.printer-anim .lb:nth-child(6){animation-delay:.75s}
+.printer-anim .lbar{fill:rgba(210,174,114,.55);transform-origin:300px 121px;animation:lb-grow 3.6s ease-in-out infinite}
+.printer-anim .lbar:nth-child(1){animation-delay:0s}
+.printer-anim .lbar:nth-child(2){animation-delay:.15s}
+.printer-anim .lbar:nth-child(3){animation-delay:.3s}
+.printer-anim .lbar:nth-child(4){animation-delay:.45s}
+.printer-anim .lbar:nth-child(5){animation-delay:.6s}
+.printer-anim .lbar:nth-child(6){animation-delay:.75s}
 @keyframes lb-grow{0%,15%{opacity:0;transform:scaleX(.4)}30%,85%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
 .process .wrap{position:relative;z-index:1}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem;margin-top:3.5rem;position:relative}
