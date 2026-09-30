@@ -45,3 +45,27 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 const watch=()=>document.querySelectorAll(".rv:not(.in),.step:not(.in)").forEach(el=>io.observe(el));watch();
 const bar=$(".bar"),pr=$(".progress");
 addEventListener("scroll",()=>{const y=scrollY,h=document.body.scrollHeight-innerHeight;pr.style.transform=`scaleX(${y/h})`;bar.classList.toggle("on",y>60)},{passive:true});
+
+// Scroll-Story "Präzision": Drucker -> Explosionsansicht -> Düse, sanft überblendet beim Scrollen.
+(function(){
+  const rs=document.getElementById("rs");if(!rs)return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return; // barrierefreie Basisversion bleibt bestehen
+  rs.classList.add("rs-on");
+  const imgs=[...rs.querySelectorAll(".rs-img")],caps=[...rs.querySelectorAll(".rs-cap")],dots=[...rs.querySelectorAll(".rs-dots span")];
+  let top=0,h=1;
+  function measure(){top=rs.offsetTop;h=Math.max(1,rs.offsetHeight-innerHeight)}
+  function smoothstep(e0,e1,x){const t=Math.min(1,Math.max(0,(x-e0)/(e1-e0)));return t*t*(3-2*t)}
+  function update(){
+    const p=Math.min(1,Math.max(0,(scrollY-top)/h));
+    const b1=.38,b2=.72,tw=.12;
+    const o=[1-smoothstep(b1-tw/2,b1+tw/2,p),smoothstep(b1-tw/2,b1+tw/2,p)-smoothstep(b2-tw/2,b2+tw/2,p),smoothstep(b2-tw/2,b2+tw/2,p)];
+    o.forEach((v,i)=>{
+      imgs[i].style.opacity=v;imgs[i].style.transform=`translate(-50%,-50%) scale(${.97+.03*v})`;
+      caps[i].style.opacity=v;
+      dots[i].classList.toggle("on",v>.5);
+    });
+  }
+  measure();update();
+  addEventListener("resize",()=>{measure();update()});
+  addEventListener("scroll",update,{passive:true});
+})();
