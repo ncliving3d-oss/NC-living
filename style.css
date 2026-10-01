@@ -110,7 +110,7 @@ section{padding:clamp(4.5rem,10vw,9rem) 0}
 .rs.rs-on{position:relative;height:300vh}
 .rs.rs-on .rs-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:block;overflow:hidden}
 .rs.rs-on .rs-stage{position:absolute;inset:0;display:block}
-.rs.rs-on .rs-img{position:absolute;left:50%;top:22%;max-width:min(480px,70%);max-height:30vh;max-height:30dvh;width:auto;height:auto;object-fit:contain;margin:0;opacity:0;transform:translate(-50%,-50%) scale(.97);will-change:opacity,transform}
+.rs.rs-on .rs-img{position:absolute;left:50%;top:30%;max-width:min(500px,74%);max-height:36vh;max-height:36dvh;width:auto;height:auto;object-fit:contain;margin:0;opacity:0;transform:translate(-50%,-50%) scale(.97);will-change:opacity,transform}
 
 .rs.rs-on .rs-cap{position:absolute;left:50%;bottom:5%;translate:-50% 0;opacity:0;margin:0;padding:0 1.2rem;max-width:320px}
 .rs.rs-on .rs-cap h3{font-size:1.15rem;line-height:1.25}
