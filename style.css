@@ -108,12 +108,14 @@ section{padding:clamp(4.5rem,10vw,9rem) 0}
 
 /* Erweiterte Version, wenn JS die Klasse rs-on setzt: Bild bleibt fixiert, Szenen blenden beim Scrollen über */
 .rs.rs-on{position:relative;height:300vh}
-.rs.rs-on .rs-sticky{position:sticky;top:0;height:100vh;display:block;overflow:hidden}
+.rs.rs-on .rs-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:block;overflow:hidden}
 .rs.rs-on .rs-stage{position:absolute;inset:0;display:block}
-.rs.rs-on .rs-img{position:absolute;left:50%;top:30%;max-width:min(520px,78%);max-height:44vh;width:auto;height:auto;object-fit:contain;margin:0;opacity:0;transform:translate(-50%,-50%) scale(.97);will-change:opacity,transform}
+.rs.rs-on .rs-img{position:absolute;left:50%;top:22%;max-width:min(480px,70%);max-height:30vh;max-height:30dvh;width:auto;height:auto;object-fit:contain;margin:0;opacity:0;transform:translate(-50%,-50%) scale(.97);will-change:opacity,transform}
 
-.rs.rs-on .rs-cap{position:absolute;left:50%;bottom:9%;translate:-50% 0;opacity:0;margin:0;padding:0 1.2rem}
-.rs.rs-on .rs-dots{display:flex;gap:.55rem;position:absolute;left:50%;bottom:3%;translate:-50% 0;z-index:2}
+.rs.rs-on .rs-cap{position:absolute;left:50%;bottom:5%;translate:-50% 0;opacity:0;margin:0;padding:0 1.2rem;max-width:320px}
+.rs.rs-on .rs-cap h3{font-size:1.15rem;line-height:1.25}
+.rs.rs-on .rs-cap p{font-size:.86rem;line-height:1.5}
+.rs.rs-on .rs-dots{display:flex;gap:.55rem;position:absolute;left:50%;bottom:1.5%;translate:-50% 0;z-index:2}
 .rs-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .3s}
 .rs-dots span.on{background:var(--gold)}
 .step:nth-child(1) .layers i:nth-child(1){width:40%}.step:nth-child(1) .layers i:nth-child(2){width:65%}.step:nth-child(1) .layers i:nth-child(3){width:85%}.step:nth-child(1) .layers i:nth-child(4){width:65%}.step:nth-child(1) .layers i:nth-child(5){width:40%}
