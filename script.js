@@ -52,20 +52,34 @@ addEventListener("scroll",()=>{const y=scrollY,h=document.body.scrollHeight-inne
   if(matchMedia("(prefers-reduced-motion: reduce)").matches)return; // barrierefreie Basisversion bleibt bestehen
   rs.classList.add("rs-on");
   const imgs=[...rs.querySelectorAll(".rs-img")],caps=[...rs.querySelectorAll(".rs-cap")],dots=[...rs.querySelectorAll(".rs-dots span")];
-  let top=0,h=1;
-  function measure(){top=rs.offsetTop;h=Math.max(1,rs.offsetHeight-innerHeight)}
+  const filament=rs.querySelector(".rs-filament"),filPath=filament.querySelector("path"),bullets=rs.querySelector(".bullets");
+  const sticky=rs.querySelector(".rs-sticky");
+  let top=0,h=1,pathLen=0;
+  function measure(){
+    top=rs.offsetTop;h=Math.max(1,rs.offsetHeight-innerHeight);
+    const stickyRect=sticky.getBoundingClientRect(),nozzleRect=imgs[2].getBoundingClientRect();
+    filament.style.top=(nozzleRect.bottom-stickyRect.top-10)+"px";
+  }
+  function setupFilament(){pathLen=filPath.getTotalLength();filPath.style.strokeDasharray=pathLen}
   function smoothstep(e0,e1,x){const t=Math.min(1,Math.max(0,(x-e0)/(e1-e0)));return t*t*(3-2*t)}
   function update(){
     const p=Math.min(1,Math.max(0,(scrollY-top)/h));
-    const b1=.38,b2=.72,tw=.12;
+    const b1=.27,b2=.50,tw=.09;
     const o=[1-smoothstep(b1-tw/2,b1+tw/2,p),smoothstep(b1-tw/2,b1+tw/2,p)-smoothstep(b2-tw/2,b2+tw/2,p),smoothstep(b2-tw/2,b2+tw/2,p)];
     o.forEach((v,i)=>{
       imgs[i].style.opacity=v;imgs[i].style.transform=`translate(-50%,-50%) scale(${.97+.03*v})`;
       caps[i].style.opacity=v;
       dots[i].classList.toggle("on",v>.5);
     });
+    // Filament: zieht sich nach dem Erscheinen der Düse aus der Düsenspitze
+    const drawP=smoothstep(.60,.80,p);
+    filament.style.opacity=o[2]>.5?Math.min(1,drawP*3):0;
+    if(pathLen)filPath.style.strokeDashoffset=pathLen*(1-drawP);
+    // Stichpunkte zu Material/Temperatur blenden danach ein
+    if(bullets)bullets.style.opacity=smoothstep(.83,.95,p);
   }
-  measure();update();
+  measure();setupFilament();update();
+  imgs[2].addEventListener("load",()=>{measure();update()});
   addEventListener("resize",()=>{measure();update()});
   addEventListener("scroll",update,{passive:true});
 })();

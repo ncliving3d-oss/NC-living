@@ -107,7 +107,7 @@ section{padding:clamp(4.5rem,10vw,9rem) 0}
 .rs-dots{display:none}
 
 /* Erweiterte Version, wenn JS die Klasse rs-on setzt: Bild bleibt fixiert, Szenen blenden beim Scrollen über */
-.rs.rs-on{position:relative;height:300vh}
+.rs.rs-on{position:relative;height:440vh}
 .rs.rs-on .rs-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:block;overflow:hidden}
 .rs.rs-on .rs-stage{position:absolute;inset:0;display:block}
 .rs.rs-on .rs-img{position:absolute;left:50%;top:30%;max-width:min(500px,74%);max-height:36vh;max-height:36dvh;width:auto;height:auto;object-fit:contain;margin:0;opacity:0;transform:translate(-50%,-50%) scale(.97);will-change:opacity,transform}
@@ -116,6 +116,25 @@ section{padding:clamp(4.5rem,10vw,9rem) 0}
 .rs.rs-on .rs-cap h3{font-size:1.15rem;line-height:1.25}
 .rs.rs-on .rs-cap p{font-size:.86rem;line-height:1.5}
 .rs.rs-on .rs-dots{display:flex;gap:.55rem;position:absolute;left:50%;bottom:1.5%;translate:-50% 0;z-index:2}
+
+.rs-filament{position:absolute;left:50%;top:100%;translate:-50% -4%;width:62px;pointer-events:none;opacity:0}
+.rs-filament path{fill:none;stroke:#f3eadb;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+
+.rs-cap-temp .bullets{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
+.rs-cap-temp ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem}
+.rs-cap-temp li{color:#bcb2a0;font-size:.86rem;position:relative;padding-left:1.1rem}
+.rs-cap-temp li::before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+@media(min-width:760px){
+  .rs.rs-on .rs-cap-temp{bottom:auto;top:50%;translate:-50% -50%;max-width:none;width:100%;pointer-events:none}
+  .rs.rs-on .rs-cap-temp h3{position:absolute;left:50%;bottom:-14vh;translate:-50% 0;width:320px}
+  .rs-cap-temp .bullets{flex-direction:row;justify-content:space-between;margin-top:0}
+  .rs-cap-temp ul{width:220px}
+  .rs-cap-temp .bl-left{position:absolute;right:calc(50% + 150px);top:0;text-align:right}
+  .rs-cap-temp .bl-left li{padding-left:0;padding-right:1.1rem}
+  .rs-cap-temp .bl-left li::before{left:auto;right:0}
+  .rs-cap-temp .bl-right{position:absolute;left:calc(50% + 150px);top:0;text-align:left}
+}
 .rs-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .3s}
 .rs-dots span.on{background:var(--gold)}
 .step:nth-child(1) .layers i:nth-child(1){width:40%}.step:nth-child(1) .layers i:nth-child(2){width:65%}.step:nth-child(1) .layers i:nth-child(3){width:85%}.step:nth-child(1) .layers i:nth-child(4){width:65%}.step:nth-child(1) .layers i:nth-child(5){width:40%}
