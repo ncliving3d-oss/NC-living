@@ -19,7 +19,7 @@ window.NC = {
       titel: "Herzkette",
       kategorie: "Herzen",
       // Beispiel mit mehreren Fotos: bilder: ["herzkette-1.jpg","herzkette-2.jpg","herzkette-3.jpg"]
-      bilder: ["Herz1","Herz2","Herz3"],
+      bilder: ["Herz2","Herz3"],
       text: "Gedruckte Herzen, aneinander aufgereih, oder als Paar nebeneinander.",
       link: ""
     },
