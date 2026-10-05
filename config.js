@@ -25,7 +25,7 @@ window.NC = {
     },
     {
       titel: "Tannenbaumkette",
-      kategorie: "Tannenbaum",
+      kategorie: "Tannenbäume",
       // Beispiel mit mehreren Fotos: bilder: ["herzkette-1.jpg","herzkette-2.jpg","herzkette-3.jpg"]
       bilder: ["Tannenbaum1","Tannenbaum2","Tannenbaum3"],
       text: "Gedruckte Tannenbäume, aneinander aufgereiht, oder als Paar nebeneinander",
