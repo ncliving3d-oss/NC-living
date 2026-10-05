@@ -20,8 +20,16 @@ window.NC = {
       kategorie: "Herzen",
       // Beispiel mit mehreren Fotos: bilder: ["herzkette-1.jpg","herzkette-2.jpg","herzkette-3.jpg"]
       bilder: ["Herz1","Herz2","Herz3"],
-      text: "Gedruckte Herzen, Schicht für Schicht aufgereiht.",
+      text: "Gedruckte Herzen, aneinander aufgereih, oder als Paar nebeneinander.",
       link: ""
-    }
+    },
+    {
+      titel: "Tannenbaumkette",
+      kategorie: "Tannenbaum",
+      // Beispiel mit mehreren Fotos: bilder: ["herzkette-1.jpg","herzkette-2.jpg","herzkette-3.jpg"]
+      bilder: ["Tannenbaum1","Tannenbaum2","Tannenbaum3"],
+      text: "Gedruckte Tannenbäume, aneinander aufgereiht, oder als Paar nebeneinander",
+      link: ""
+    } 
   ]
 };
