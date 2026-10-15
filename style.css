@@ -130,9 +130,10 @@ section{padding:clamp(4.5rem,10vw,9rem) 0}
 .step.in .layers i:nth-child(1){animation-delay:.1s}.step.in .layers i:nth-child(2){animation-delay:.22s}.step.in .layers i:nth-child(3){animation-delay:.34s}.step.in .layers i:nth-child(4){animation-delay:.46s}.step.in .layers i:nth-child(5){animation-delay:.58s}
 @keyframes grow{from{width:0}}
 /* Pflege */
-.care{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;margin-top:2.4rem}
+.care{display:grid;grid-template-columns:1fr;gap:1.6rem;margin-top:2.4rem}
+@media(min-width:760px){.care{grid-template-columns:repeat(2,1fr)}}
 .care div{padding:1.8rem;border-radius:var(--r);background:#fbf7f0;box-shadow:0 14px 28px -22px rgba(30,25,20,.3)}
-.care h3{font-size:1.2rem;margin-bottom:.5rem}.care li{margin:.35rem 0 0 1.1rem;font-size:.96rem;color:#57524b}
+.care h3{font-size:1.2rem;margin-bottom:.5rem}.care strong{color:var(--ink)}.care small{color:#78715f}.care li{margin:.35rem 0 0 1.1rem;font-size:.96rem;color:#57524b}
 /* Kaufen & Kontakt */
 .shops{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem;margin-top:2.4rem}
 .shop{display:block;padding:1.9rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);text-decoration:none;transition:.3s;border-radius:var(--r)}
@@ -146,3 +147,5 @@ section{padding:clamp(4.5rem,10vw,9rem) 0}
 .doc{width:min(780px,90%);margin:auto;padding:8rem 0 4rem}.doc h1{font-size:2.6rem;margin-bottom:1.5rem}.doc p{margin:.7rem 0}.doc h2,.doc h3{font-size:1.4rem;margin:1.8rem 0 .4rem}.doc a{color:var(--brown)}.legal{background:var(--cream)}.legal .foot{margin-top:2rem}
 @media(max-width:800px){.bar nav{display:none}.step .num{font-size:4rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;translate:0}.aura,.printer-anim{display:none}}
+
+.care-dl{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}.care-dl .btn{display:inline-flex;align-items:center;gap:.55rem}.care-dl svg{width:18px;height:18px;fill:currentColor}.care-dl span{font-size:.85rem;color:#78715f}
