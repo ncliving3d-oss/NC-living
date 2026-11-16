@@ -12,7 +12,7 @@ window.NC = {
   plattformen: [
     { name: "eBay",         url: "", text: "Unsere Artikel bei eBay" },
     { name: "Kleinanzeigen", url: "", text: "Direkt aus der Region" },
-    { name: "Etsy",         url: "", text: "Handgemachtes bei Etsy" }
+    { name: "Etsy",         url: "https://nclivingde.etsy.com", text: "Handgemachtes bei Etsy" }
   ],
   produkte: [
     {
